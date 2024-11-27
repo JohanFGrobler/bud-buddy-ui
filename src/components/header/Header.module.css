@@ -1,0 +1,65 @@
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "left title right";
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  background-color: var(--background); /* Ensure background covers content under the header */
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.header__iconLeft {
+  grid-area: left;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--foreground-muted);
+  transition: color 0.2s ease;
+}
+
+.header__iconLeft:hover {
+  color: var(--primary);
+}
+
+.header__iconRight {
+  grid-area: right;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--foreground-muted);
+  transition: color 0.2s ease;
+}
+
+.header__iconRight:hover {
+  color: var(--primary);
+}
+
+.header__title {
+  grid-area: title;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin: 0 1rem;
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding-top: 1.5rem;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "left gap right"
+      "title title title";
+  }
+
+  .header__title {
+    text-align: left;
+    margin: 0;
+    padding-top: 1.5rem;
+    font-size: 2rem;
+  }
+}

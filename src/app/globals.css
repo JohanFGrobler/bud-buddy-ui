@@ -1,0 +1,52 @@
+/* globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font setup */
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Theme variables */
+@layer base {
+  :root {
+    --primary: #195e04;
+    --background: #ffffff;
+    --border: #cccccc;
+    --border-light: #e5e5e5;
+    --card: #ffffff;
+    --card-foreground: #0a0a0a;
+    --foreground: #0a0a0a;
+    --foreground-muted: #646464;
+    --radius-sm: 0.5rem;
+    --radius-md: 1rem;
+  }
+
+  .dark {
+    --primary: #123308;
+    --background: #0a0a0a;
+    --border: #cccccc;
+    --border-light: #e5e5e5;
+    --card: #0a0a0a;
+    --card-foreground: #fafafa;
+    --foreground-muted: #393939;
+    --foreground: #fafafa;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Global media query utilities */
+@layer base {
+  :root {
+    --sm: 640px;
+    --md: 768px;
+    --lg: 1024px;
+    --xl: 1280px;
+    --2xl: 1536px;
+  }
+}

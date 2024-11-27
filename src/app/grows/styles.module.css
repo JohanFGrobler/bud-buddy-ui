@@ -1,0 +1,44 @@
+.grid {
+  display: grid;
+  padding: 1.5rem; /* Add padding around the grid */
+  background-color: var(--background); /* Dynamic background color */
+  color: var(--foreground); /* Dynamic text color */
+  grid-template-columns: 1fr; /* Default column layout for smaller screens (1 column) */
+}
+
+.grid__item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+@media (max-width: 640px) {
+  .grid__item:not(:last-child) {
+    border-bottom: 1px solid var(--border); /* Add a bottom border to all items except the last */
+  }
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+    gap: 2rem;
+  }
+
+  .grid__item {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for extra-large screens */
+  }
+}
+
