@@ -8,7 +8,7 @@ import Input from '@/components/inputs/input/Input'
 import styles from './auth.module.css'
 import GoogleSignInButton from '@/forms/auth/GoogleSignIn'
 
-export default function LoginForm() {
+export default function LoginForm({onRegister}: { onRegister: () => void }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -46,11 +46,13 @@ export default function LoginForm() {
         <h2 className={styles.subtitle}>Log in to track your grow, manage your plants, and watch your harvest
           flourish.</h2>
 
-        <GoogleSignInButton/>
+        <GoogleSignInButton type={'login'}/>
 
         <div className={styles.orLineContainer}>
           <span className={styles.orText}>OR</span>
         </div>
+
+        {/*EMAIL*/}
         <Input
           type="email"
           value={email}
@@ -59,6 +61,8 @@ export default function LoginForm() {
           placeholder="Email"
           error={touched.email ? validationErrors.email : ''}
         />
+
+        {/*PASSWORD*/}
         <Input
           type="password"
           value={password}
@@ -67,10 +71,20 @@ export default function LoginForm() {
           placeholder="Password"
           error={touched.password ? validationErrors.password : ''}
         />
+        <p className={styles.text}>Forgot your password? <span className={styles.link}
+                                                                    onClick={onRegister}>Reset it here</span>
+        </p>
+
+        {/*LOGIN BUTTON*/}
         <button type="submit" className={styles.button}>
           Login
         </button>
         {error && <p className={styles.error}>{error}</p>}
+
+        {/*REGISTER*/}
+        <p className={styles.text}>Need to create an account? <span className={styles.link}
+                                                                    onClick={onRegister}>Sign up</span>
+        </p>
       </form>
     </div>
   )

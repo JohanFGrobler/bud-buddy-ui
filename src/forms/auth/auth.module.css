@@ -1,14 +1,16 @@
 /* auth.module.css */
-
 .container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   padding: 1rem;
+  z-index: 3;
 }
 
 .form {
+  position: relative;
   background: var(--background);
   padding: 2rem;
   border: 1px solid var(--border-light);
@@ -19,6 +21,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  z-index: 3;
 }
 
 .title {
@@ -31,8 +34,9 @@
 .subtitle {
   font-size: 1rem;
   text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
   color: var(--foreground);
-  margin-bottom: 1rem;
 }
 
 .inputGroup {
@@ -131,4 +135,44 @@
   color: var(--foreground-muted);
   margin: 0 1rem;
   font-weight: bold;
+}
+
+/* TEXT */
+.text {
+  font-size: 1rem;
+  color: var(--foreground-muted);
+}
+
+.link {
+  font-size: 1rem;
+  color: var(--foreground);
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: var(--primary);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 640px) {
+  .container {
+    padding: 0;
+  }
+
+  .form {
+    width: 100%;
+    height: 100dvh;
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
 }
