@@ -1,5 +1,5 @@
 
-import React from 'react'
+import {FC} from 'react'
 import Image from 'next/image'
 import styles from './GrowCard.module.css'
 import { MdArrowForwardIos } from "react-icons/md";
@@ -10,7 +10,7 @@ interface GrowCardProps {
   imageUrl: string;
 }
 
-const Card: React.FC<GrowCardProps> = ({title, description, imageUrl}) => {
+const Card: FC<GrowCardProps> = ({title, description, imageUrl}) => {
   return (
     <div className={styles.card}>
       <div className={styles.card__imageWrapper}>

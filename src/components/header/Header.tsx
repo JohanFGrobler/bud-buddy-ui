@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useEffect, useState} from 'react'
+import {ReactNode, useEffect, useState} from 'react'
 import {usePathname} from 'next/navigation'
 import styles from './Header.module.css'
 import {IoIosMore} from 'react-icons/io'
@@ -8,7 +8,7 @@ import {MdArrowBackIos} from 'react-icons/md'
 
 type Icon = {
   visible: boolean,
-  icon: React.ReactNode,
+  icon: ReactNode,
 }
 
 export default function Header() {

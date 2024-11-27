@@ -1,0 +1,37 @@
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--radius-sm);
+}
+
+.label {
+  font-size: 0.875rem;
+  color: var(--foreground-muted);
+}
+
+.input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  background-color: var(--card);
+  color: var(--card-foreground);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 4px rgba(25, 94, 4, 0.2); /* Slight glow effect using primary color */
+}
+
+.focused {
+  border-color: var(--primary);
+  box-shadow: 0 0 4px rgba(18, 51, 8, 0.3); /* Adjusted for a darker variant in focus */
+}
+
+.error {
+  color: #ff4d4f; /* Retained for contrast unless you have a variable for error colors */
+  font-size: 0.875rem;
+  margin: -0.5rem 0 0;
+}
