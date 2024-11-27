@@ -17,11 +17,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en" className={inter.variable}>
-    <body className="max-w-screen-2xl mx-auto">
+    <body >
     <Providers>
       {path !== '/' && <Header />}
-      <main>{children}</main>
-      {path !== '/' && <BackToTopButton />}
+      <div className="max-w-screen-2xl mx-auto">
+        <main>{children}</main>
+        {path !== '/' && <BackToTopButton />}
+      </div>
     </Providers>
     </body>
     </html>

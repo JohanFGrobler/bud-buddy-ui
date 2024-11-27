@@ -2,9 +2,10 @@
 
 import {ReactNode, useEffect, useState} from 'react'
 import {usePathname} from 'next/navigation'
-import styles from './Header.module.css'
+import styles from './header.module.css'
 import {IoIosMore} from 'react-icons/io'
 import {MdArrowBackIos} from 'react-icons/md'
+import {IoSearch} from 'react-icons/io5'
 
 type Icon = {
   visible: boolean,
@@ -46,6 +47,16 @@ export default function Header() {
 
       {/* Menu icon */}
       <div className={styles.header__iconRight}>{actionIcon.visible ? actionIcon.icon : null}</div>
+
+      {/* Search*/}
+      <input className={styles.input__search}/>
+
+      {/* Actions */}
+      <button className={styles.button + ' ' + styles.button__search} onClick={() => alert('Still need to do this')}>
+        <IoSearch size={25}/></button>
+
+      <button className={styles.button + ' ' + styles.button__add} onClick={() => alert('Still need to do this')}>+
+      </button>
     </header>
   )
 }

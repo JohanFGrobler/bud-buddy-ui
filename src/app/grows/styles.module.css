@@ -1,21 +1,10 @@
 .grid {
   display: grid;
-  padding: 1.5rem; /* Add padding around the grid */
+  padding: 0.5rem; /* Add padding around the grid */
   background-color: var(--background); /* Dynamic background color */
   color: var(--foreground); /* Dynamic text color */
   grid-template-columns: 1fr; /* Default column layout for smaller screens (1 column) */
-}
-
-.grid__item {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-}
-
-
-@media (max-width: 640px) {
-  .grid__item:not(:last-child) {
-    border-bottom: 1px solid var(--border); /* Add a bottom border to all items except the last */
-  }
+  gap: 1rem;
 }
 
 @media (min-width: 640px) {

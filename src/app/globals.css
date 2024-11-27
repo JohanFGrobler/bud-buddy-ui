@@ -12,7 +12,7 @@ body {
 /* Theme variables */
 @layer base {
   :root {
-    --primary: #195e04;
+    --primary: #7bb16b;
     --background: #ffffff;
     --border: #cccccc;
     --border-light: #e5e5e5;
